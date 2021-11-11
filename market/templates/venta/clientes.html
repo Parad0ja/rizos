@@ -1,0 +1,77 @@
+{% extends "users/base_users.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-x grid-margin-x align-center">
+  <h3 class="cell" style="margin-bottom: 1em; text-align: center;">Clientes del Sistema</h3>  
+  <table class="cell">
+      <thead>
+          <th>Primer Nombre</th>
+          <th>Segundo Nombre</th>
+          <th>Nit</th>
+          <th>Direccion</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+          <th>Editar</th>
+      </thead>
+      <tbody>
+        {% for cliente in clientes %}
+          <tr>
+            <td>{{ cliente.P_nombre }}</td>
+            <td>{{ cliente.P_apellido }}</td>
+            <td>{{ cliente.Nit }}</td>
+            <td>{{ cliente.Direccion }}</td>
+            <td>{{ cliente.Telefono }}</td>
+            <td>{{ cliente.Correo }}</td>
+            <td>
+            <a href="#" class="button   "><i class="fi-pencil"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+
+  <div class="cell">
+    {% if is_paginated %}
+    <nav aria-label="Pagination">
+      <ul class="pagination">
+          {% if page_obj.has_previous %}        
+          <li class="pagination-previous ">
+              <a href="?page={{page_obj.previous_page_number}}"> Atras </a>             
+          </li>            
+          {% endif %}
+          
+          {% for pagina in paginator.page_range %}
+          
+          {% ifequal pagina page_obj.number %} 
+          <li class="current"><span class="show-for-sr">You're on page</span> {{pagina}}</li>
+          {%else%}
+          
+          <li><a href="?page={{pagina}}">{{pagina}}</a></li>
+          
+          {% endifequal %}
+            
+
+          {% endfor %}
+          
+          {% if page_obj.has_next %}
+         
+          <li class="pagination-next">
+            <a href="?page={{page_obj.next_page_number}}"> Siguiente </a>
+             
+          </li>
+         
+          {% endif %}
+            
+        </ul>
+    </nav> 
+    {% endif %}
+      
+    <a href="{% url 'venta_app:nuevo-cliente' %}" class="cell button">Agregar Nuevo Cliente</a>
+  </div>
+
+</div>
+
+{% endblock panel-content %}

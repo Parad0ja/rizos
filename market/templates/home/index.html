@@ -1,0 +1,18 @@
+{% extends "home/base_home.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-container" >
+    <div class="grid-y medium-grid-frame align-center">
+      <div class="grid-x grid-padding-x align-center">
+        <div class="callout warning">
+
+            <h1 class="cell" style="text-align: center;"></h5>Bienvenido: {{user.full_name}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock panel-content %}

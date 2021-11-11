@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load  static %}
+
+{% block title %}
+  Rizos
+{% endblock title %}
+  
+{% block content %}
+
+<div class="top-bar"  id="responsive-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Rizos Mexicanos Huehuetenango</li>
+      <li class="has-submenu">
+        <a>BODEGA</a>
+        <ul class="submenu menu vertical" data-submenu>
+          <li class="{% if request.resolver_match.url_name == 'producto-lista' %}activeli{% endif %}">
+            <a href="{% url 'producto_app:producto-lista' %}" style="color: black;">Productos</a>
+          </li>
+          <li class="{% if request.resolver_match.url_name == 'producto-filtros' %}activeli{% endif %}">
+            <a href="{% url 'producto_app:producto-filtros' %}" style="color: black;">Reportes</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a>VENTAS</a>
+        <ul class="submenu menu vertical" data-submenu>
+          <li class="{% if request.resolver_match.url_name == 'venta-index' %}activeli{% endif %}">
+            <a href="{% url 'venta_app:venta-index' %}" style="color: black;">Vender</a>
+          </li>
+        </li>
+        <li class="{% if request.resolver_match.url_name == 'caja-index' %}activeli{% endif %}">
+          <a href="{% url 'caja_app:caja-index' %}" style="color: black;">Cerrar Caja</a>
+        </li>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'caja-index' %}activeli{% endif %}">
+        <a href="{% url 'venta_app:cliente-lista' %}" style="color: black;">Nuevo Cliente</a>
+      </li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a>ADMINISTRACIÓN</a>
+        <ul class="submenu menu vertical" data-submenu>
+          <li class="{% if request.resolver_match.url_name == 'index-admin' %}activeli{% endif %}">
+            <a href="{% url 'home_app:index-admin' %}" style="color: black;">Informes</a>
+          </li>
+        </li>
+        <li class="{% if request.resolver_match.url_name == 'user-lista' %}activeli{% endif %}">
+          <a href="{% url 'users_app:user-lista' %}" style="color: black;">Usuarios</a>
+        </li>
+        <li class="{% if request.resolver_match.url_name == 'admin-reporte' %}activeli{% endif %}">
+          <a href="{% url 'home_app:admin-reporte' %}" style="color: black;">Reportes</a>
+        </li>
+        
+        </ul>
+      </li>
+      <li><a  style="color: black;"> Usuario: {{ user.full_name}}</a></li>
+        
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    
+    <ul class="menu">
+      <li> <a href="{% url 'users_app:user-logout' %}" ><span class="button alert">Salir</span></a> </li>
+    </ul>
+  </div>
+
+  </div>
+    <div class="grid-container" style="padding: 1em;">
+      {% block panel-content %}
+      {% endblock panel-content %}
+    </div>
+  </div>
+
+
+</div>
+
+
+{% endblock content %}

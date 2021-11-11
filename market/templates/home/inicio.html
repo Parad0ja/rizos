@@ -1,0 +1,175 @@
+
+{% load  static %}
+<title>
+  Rizos Mexicanos GT
+
+
+</title>
+
+{% block ccs %}
+  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="{% static 'css/headers.css' %}" rel="stylesheet">
+{% endblock ccs %}
+  
+
+{% block content %}
+
+<header class="d-flex justify-content-center py-3">
+  
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Inicio</a></li>
+    <li class="nav-item"><a href="{% url 'users_app:productos'%}" class="nav-link">Productos</a></li>
+    <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=50240689571&text=hola%20me%20puedes%20compartir%20información" class="nav-link">Contacto</a></li>
+
+  </ul>
+</header>
+
+
+<main>
+
+  <div id="myCarousel1" class="carousel slide" data-bs-ride="carousel1">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/Portada/p3.png' %}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 style="color: black;">Perfectamente imperfectos.</h1>
+            <p style="color: black;">Asi son mis rizos.</p>
+            <p><a class="btn btn-lg" style="background-color: #eb1280;" href="https://api.whatsapp.com/send?phone=50240689571&text=hola%20me%20puedes%20compartir%20información">Contactar</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/Portada/p1.png' %}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 style="color: black;">Dedicados al cuidadado de tus rizos.</h1>
+            <p style="color: black;">Luce tu cabello.</p>
+            <p><a class="btn btn-lg " style="background-color: #eb1280;" href="#">Aprende mas</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/Portada/p2.png' %}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 style="color: black;">Nadie es como yo.</h1>
+            <p style="color:black;"> Nadie tiene mis rizos y ese es uno de mis poderes.</p>
+            <p><a class="btn btn-lg" style="background-color: #eb1280;" href="{% url 'users_app:productos'%}">Galeria de Productos</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel1" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel1" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="{% static 'images/Logo/logo.png' %}" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+
+        <h2>Mision</h2>
+        <p>Promover el amor propio, motivando a las mujeres a ser reales, a ser ellas mismas y a explotar su autenticidad, en especial en las mujeres con cabello rizado, ayudarlas a aceptar su belleza natural, elevando su autoestima y conanza en sí mismas, siempre atesorando y empoderando cada uno de sus rizos.</p>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-6">
+        <img src="{% static 'images/Logo/logo.png' %}" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+
+        <h2>Vision</h2>
+        <p>Impactar e inspirar de forma positiva a mujeres con cabello rizado promoviendo su amor por ellas mismas y enalteciendo cada parte auténtica de ellas, en especial, tuvieron la fortuna de nacer.</p>
+        <p>Queremos ser una de las principales referencias expertas en cabello rizado en México ofreciendo nuestro conocimiento, servicio y productos exclusivamente diseñados para cabello rizado.</p>
+       
+    
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">¿Cual es tu Patrón de Rizo? <span class="text-muted">Descubrelo.</span></h2>
+        <p class="lead">Patron tipo 2, si tu cabello es 2a, 2b o 2c, probablemente tengas menos friz que los otros tipos de patrón en tu caso, puedes utilizar algún tipo de acondicionador ligero.</p>
+        <p class="lead">Patron tipo 3, si tu cabello es 3a, 3b o 3c, es muy importante mantener tus rizos muy hidratados, no enjuagar por completo tu acondicionador te ayudará a retener la hidratación extra que necesitas; puedes sellarla con tus productos de estilizado al colocarlos con el cabello muy mojado</p>
+        <p class="lead">Patrón tipo 4, si tu cabello es 4a, 4b o 4c, la hebra de tus rizos es más difícil de penetrar, por lo que agregar un poco de calor en tu mascarilla hidratante, te puede beneficiar para que tu cabello absorba sus beneficios y puedes sellar con cremas nutritivas.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/1.jpg' %}" class="d-block w-100" width="500" height="500">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/2.jpg' %}" class="d-block w-100" width="500" height="500">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">¿Donde comprar?. <span class="text-muted">Escribenos a nuestro WhatSapp.</span> </h2>
+        <p class="lead">No te preocupes. Comunicate con nosotros resolveremos todas tus dudas.</p>
+        <p class="lead">Realizamos envios a todo el país, contamos con pago contra entrega y atención a mayoristas.</p>
+        <p><a class="btn btn-lg" style="background-color: #eb1280;" href="https://api.whatsapp.com/send?phone=50240689571&text=hola%20me%20puedes%20compartir%20información">Contactar</a></p>
+          
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'images/Exito/pago.png' %}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></img>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+   
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Regresar a la parte superior</a></p>
+    <p>&copy; 2018-2021 Rizos Mexicanos Guatemala.</a></p>
+  </footer>
+</main>
+{% endblock content %}
+
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock js %}
+  
+    
